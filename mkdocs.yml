@@ -1,12 +1,44 @@
 site_name: Static Site MkDocs
 site_url: https://w1ldfox.github.io/static-site-mkdocs/
-site_description: Учебный проект по развертыванию статического сайта
+site_description: Учебный проект по развертыванию статического сайта с кастомной темой
 site_author: W1ldFox
 
+# Навигация
 nav:
   - Главная: index.md
   - Вторая страница: second-page.md
+  - Отчёт: report.md
 
+# Кастомная тема
 theme:
-  name: readthedocs
+  name: null  
+  custom_dir: custom_theme  
   language: ru
+
+# Дополнительные CSS/JS (если нужны)
+extra_css: []
+extra_javascript: []
+
+# Плагины
+plugins:
+  - search
+
+# Расширения Markdown
+markdown_extensions:
+  - toc:
+      permalink: false
+      toc_depth: 3
+  - tables
+  - fenced_code
+  - codehilite:
+      linenums: false
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+
+# Дополнительные настройки
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/W1ldFox/static-site-mkdocs

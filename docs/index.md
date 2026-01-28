@@ -1,17 +1,98 @@
-# Welcome to MkDocs
+# Добро пожаловать!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+<div class="home-hero">
+    <h1>Static Site MkDocs</h1>
+    <p>Учебный проект по развертыванию статического сайта с кастомной темой, CI/CD и автоматическим деплоем на GitHub Pages</p>
+    <a href="report/" class="btn">Читать отчёт →</a>
+</div>
 
-## Commands
+## О проекте
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Этот сайт создан в рамках учебного задания по изучению
 
-## Project layout
+<div class="features">
+    <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h3>Кастомная тема</h3>
+        <p>Собственная верстка и оформление</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>Автоматизация</h3>
+        <p>GitHub Actions для валидации, минификации и деплоя на каждый push</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon">📱</div>
+        <h3>Адаптивность</h3>
+        <p>Корректное отображение на всех устройствах — от мобильных до десктопов</p>
+    </div>
+    <div class="feature-card">
+        <div class="icon">🔧</div>
+        <h3>Оптимизация</h3>
+        <p>Минификация CSS/JS, PostCSS обработка и валидация HTML</p>
+    </div>
+</div>
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Стек технологий
+
+| Технология | Назначение |
+|------------|------------|
+| MkDocs | Генератор статических сайтов |
+| Jinja2 | Шаблонизатор для HTML |
+| GitHub Actions | CI/CD пайплайн |
+| GitHub Pages | Хостинг |
+| PostCSS + Autoprefixer | Обработка CSS |
+| html-minifier | Минификация HTML |
+| cssnano | Минификация CSS |
+| terser | Минификация JS |
+
+## Быстрый старт
+
+```bash
+# Клонирование репозитория
+git clone https://github.com/W1ldFox/static-site-mkdocs.git
+cd static-site-mkdocs
+
+# Создание виртуального окружения
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# или venv\Scripts\activate  # Windows
+
+# Установка зависимостей
+pip install -r requirements.txt
+
+# Запуск dev-сервера
+mkdocs serve
+```
+
+Сайт будет доступен по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## Структура проекта
+
+```
+static-site-mkdocs/
+├── docs/                    # Markdown-контент
+│   ├── index.md            # Главная страница
+│   ├── second-page.md      # Вторая страница
+│   └── report.md           # Отчёт о проекте
+├── custom_theme/           # Кастомная тема
+│   ├── main.html           # Базовый шаблон
+│   ├── css/
+│   │   └── style.css       # Стили
+│   └── js/
+│       └── main.js         # Скрипты
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # CI/CD пайплайн
+├── mkdocs.yml              # Конфигурация MkDocs
+├── requirements.txt        # Python зависимости
+├── package.json            # Node.js зависимости
+└── postcss.config.js       # Конфиг PostCSS
+```
+
+---
+
+<p class="text-center">
+    <strong>Автор:</strong> W1ldFox | 
+    <a href="https://github.com/W1ldFox/static-site-mkdocs" target="_blank">GitHub</a>
+</p>

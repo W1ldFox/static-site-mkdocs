@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Метаданные сайта -->
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    <meta name="description" content="{{ config.site_description }}">
+    <meta name="author" content="{{ config.site_author }}">
+    <meta name="generator" content="MkDocs {{ mkdocs_version }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+    <meta property="og:description" content="{{ config.site_description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.site_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ 'img/favicon.ico'|url }}" type="image/x-icon">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="{{ 'css/style.css'|url }}">
+    
+    <!-- Дополнительные стили страницы -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="{{ config.site_url }}" class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">{{ config.site_name }}</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    {% for nav_item in nav %}
+                        {% if nav_item.children %}
+                            <li class="nav-item has-dropdown">
+                                <a href="{{ nav_item.url|url }}" class="nav-link">{{ nav_item.title }}</a>
+                                <ul class="dropdown">
+                                    {% for child in nav_item.children %}
+                                        <li><a href="{{ child.url|url }}" class="dropdown-link">{{ child.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a href="{{ nav_item.url|url }}" class="nav-link {% if nav_item.active %}active{% endif %}">
+                                    {{ nav_item.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Открыть меню">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        {% block content %}
+        <div class="content-wrapper">
+            <!-- Боковая навигация (опционально) -->
+            {% if nav|length > 2 %}
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        {% for nav_item in nav %}
+                            <li>
+                                <a href="{{ nav_item.url|url }}" {% if nav_item.active %}class="active"{% endif %}>
+                                    {{ nav_item.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </aside>
+            {% endif %}
+            
+            <!-- Основной контент -->
+            <article class="page-content">
+                {% if page.title %}
+                <h1 class="page-title">{{ page.title }}</h1>
+                {% endif %}
+                
+                {{ page.content }}
+                
+                <!-- Навигация между страницами -->
+                {% if page.previous_page or page.next_page %}
+                <nav class="page-nav">
+                    {% if page.previous_page %}
+                    <a href="{{ page.previous_page.url|url }}" class="nav-prev">
+                        <span class="nav-arrow">←</span>
+                        <span class="nav-label">{{ page.previous_page.title }}</span>
+                    </a>
+                    {% endif %}
+                    
+                    {% if page.next_page %}
+                    <a href="{{ page.next_page.url|url }}" class="nav-next">
+                        <span class="nav-label">{{ page.next_page.title }}</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    {% endif %}
+                </nav>
+                {% endif %}
+            </article>
+        </div>
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{ config.site_name }}</h3>
+                    <p>{{ config.site_description }}</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-nav">
+                        {% for nav_item in nav %}
+                            <li><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/W1ldFox/static-site-mkdocs" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.mkdocs.org/" target="_blank" rel="noopener">MkDocs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 {{ config.site_author }}. Создано с помощью MkDocs.</p>
+                <p class="build-info">Последняя сборка: {{ build_date_utc }}</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="{{ 'js/main.js'|url }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
