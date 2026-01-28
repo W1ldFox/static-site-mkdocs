@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Метаданные сайта -->
+    <title>Вторая страница - Static Site MkDocs</title>
+    <meta name="description" content="Учебный проект по развертыванию статического сайта с кастомной темой">
+    <meta name="author" content="W1ldFox">
+    <meta name="generator" content="MkDocs 1.6.1">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Вторая страница - Static Site MkDocs">
+    <meta property="og:description" content="Учебный проект по развертыванию статического сайта с кастомной темой">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://w1ldfox.github.io/static-site-mkdocs/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Дополнительные стили страницы -->
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="https://w1ldfox.github.io/static-site-mkdocs/" class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">Static Site MkDocs</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    
+                        
+                            <li class="nav-item">
+                                <a href=".." class="nav-link ">
+                                    Главная
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active">
+                                    Вторая страница
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li class="nav-item">
+                                <a href="../report/" class="nav-link ">
+                                    Отчёт
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Открыть меню">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        
+        <div class="content-wrapper">
+            <!-- Боковая навигация (опционально) -->
+            
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        
+                            <li>
+                                <a href=".." >
+                                    Главная
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="./" class="active">
+                                    Вторая страница
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="../report/" >
+                                    Отчёт
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </aside>
+            
+            
+            <!-- Основной контент -->
+            <article class="page-content">
+                
+                <h1 class="page-title">Вторая страница</h1>
+                
+                
+                <h1 id="_1">Вторая страница</h1>
+<p>Это демонстрационная страница для проверки работы темы с различными типами контента.</p>
+<h2 id="_2">Заголовки разных уровней</h2>
+<h3 id="_3">Заголовок третьего уровня</h3>
+<p>Обычный текст под заголовком третьего уровня.</p>
+<h4 id="_4">Заголовок четвёртого уровня</h4>
+<p>Текст под заголовком четвёртого уровня.</p>
+<h2 id="_5">Текстовое форматирование</h2>
+<p>Это <strong>жирный текст</strong> и это <em>курсивный текст</em>. А это <strong><em>жирный курсив</em></strong>.</p>
+<p>Можно использовать <code>inline code</code> прямо в тексте.</p>
+<p>~~Зачёркнутый текст~~ тоже поддерживается.</p>
+<h2 id="_6">Списки</h2>
+<h3 id="_7">Маркированный список</h3>
+<ul>
+<li>Первый пункт списка</li>
+<li>Второй пункт списка</li>
+<li>Вложенный пункт</li>
+<li>Ещё один вложенный</li>
+<li>Третий пункт</li>
+</ul>
+<h3 id="_8">Нумерованный список</h3>
+<ol>
+<li>Первый шаг</li>
+<li>Второй шаг</li>
+<li>Третий шаг</li>
+<li>Подшаг 3.1</li>
+<li>Подшаг 3.2</li>
+<li>Четвёртый шаг</li>
+</ol>
+<h2 id="_9">Блоки кода</h2>
+<h3 id="python">Python</h3>
+<pre class="codehilite"><code class="language-python">def hello_world():
+    &quot;&quot;&quot;Функция приветствия.&quot;&quot;&quot;
+    message = &quot;Hello, World!&quot;
+    print(message)
+    return message
+
+if __name__ == &quot;__main__&quot;:
+    hello_world()
+</code></pre>
+
+<h3 id="javascript">JavaScript</h3>
+<pre class="codehilite"><code class="language-javascript">const greeting = (name) =&gt; {
+    return `Hello, ${name}!`;
+};
+
+console.log(greeting('World'));
+</code></pre>
+
+<h3 id="bash">Bash</h3>
+<pre class="codehilite"><code class="language-bash">#!/bin/bash
+echo &quot;Building project...&quot;
+mkdocs build
+echo &quot;Done!&quot;
+</code></pre>
+
+<h2 id="_10">Цитаты</h2>
+<blockquote>
+<p>Это блок цитаты. Он может содержать несколько строк текста и обычно используется для выделения важной информации или цитирования источников.</p>
+<p>— Автор цитаты</p>
+</blockquote>
+<h2 id="_11">Таблицы</h2>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Версия</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>3.14</td>
+<td>Язык программирования</td>
+</tr>
+<tr>
+<td>MkDocs</td>
+<td>1.5+</td>
+<td>Генератор сайтов</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>18+</td>
+<td>JavaScript runtime</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>-</td>
+<td>CI/CD платформа</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">Горизонтальная линия</h2>
+<hr />
+<h2 id="_13">Ссылки</h2>
+<ul>
+<li><a href="../">Внутренняя ссылка на главную</a></li>
+<li><a href="https://github.com/W1ldFox/static-site-mkdocs">Внешняя ссылка на GitHub</a></li>
+<li><a href="https://www.mkdocs.org/">MkDocs документация</a></li>
+</ul>
+<h2 id="_14">Изображения</h2>
+<p>Для демонстрации работы с изображениями можно добавить картинку:</p>
+<pre class="codehilite"><code class="language-markdown">![Описание изображения](img/example.png)
+</code></pre>
+
+<h2 id="admonitions">Admonitions (предупреждения)</h2>
+<div class="admonition note">
+<p class="admonition-title">Заметка</p>
+<p>Это блок заметки. Используется для дополнительной информации.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Предупреждение</p>
+<p>Это блок предупреждения. Обратите внимание на важную информацию.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Совет</p>
+<p>Это блок с полезным советом.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Опасность</p>
+<p>Критически важная информация!</p>
+</div>
+<hr />
+<p><a href="../">← Вернуться на главную</a></p>
+                
+                <!-- Навигация между страницами -->
+                
+                <nav class="page-nav">
+                    
+                    <a href=".." class="nav-prev">
+                        <span class="nav-arrow">←</span>
+                        <span class="nav-label">Главная</span>
+                    </a>
+                    
+                    
+                    
+                    <a href="../report/" class="nav-next">
+                        <span class="nav-label">Отчёт</span>
+                        <span class="nav-arrow">→</span>
+                    </a>
+                    
+                </nav>
+                
+            </article>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Static Site MkDocs</h3>
+                    <p>Учебный проект по развертыванию статического сайта с кастомной темой</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-nav">
+                        
+                            <li><a href="..">Главная</a></li>
+                        
+                            <li><a href="./">Вторая страница</a></li>
+                        
+                            <li><a href="../report/">Отчёт</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/W1ldFox/static-site-mkdocs" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.mkdocs.org/" target="_blank" rel="noopener">MkDocs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 W1ldFox. Создано с помощью MkDocs.</p>
+                <p class="build-info">Последняя сборка: 2026-01-28 01:51:29.275808+00:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="../js/main.js"></script>
+    
+</body>
+</html>
